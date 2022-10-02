@@ -15,18 +15,19 @@ import styles from './FormResponse.css';
 class FormResponse extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.state);
   }
 
   render() {
     return (
       <ul className="uk-list">
         <li>
-          <span></span>  
-          <span></span>  
+          <span>Имя: </span>
+          <span>{this.props.formResponse.name}</span>  
         </li>
-        <li></li>
-        <li></li>
+        <li>
+          <span>Вид услуги: </span>
+          <span>{this.props.formResponse.subject}</span>  
+        </li>
       </ul>
     );
   }

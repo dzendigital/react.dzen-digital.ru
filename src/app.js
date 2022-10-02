@@ -18,4 +18,6 @@ import Form from './components/Form.js';
  */
 
 const form = ReactDOM.createRoot(document.getElementById('Form'));
-form.render(React.createElement(Form, {formTitle: "Форма заказа услуг"}, null));
+const form1 = ReactDOM.createRoot(document.getElementById('Form1'));
+form.render(React.createElement(Form, {formTitle:'Форма обратной связи'}, null));
+form1.render(React.createElement(Form, {formTitle:'Форма записи'}, null));

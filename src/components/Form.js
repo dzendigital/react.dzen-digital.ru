@@ -27,24 +27,23 @@ class Form extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleResponse = this.handleResponse.bind(this);
+    
   }
 
 
-  handleSubmit(e) 
+  handleSubmit(state) 
   {
-    console.log(e);
-    e.preventDefault();
+    this.handleResponse(state);
+    // e.preventDefault();
     /**
      * выполнение fetch запроса 
      */
-    console.log(this.state);
-    this.handleResponse();
-    // this.handleSubject = this.handleSubject.bind(this);
   }
-  handleResponse()
+  handleResponse(state)
   {
     this.setState(
       {
+        formData: state,
         isResponseRecived: true
       }
     );
@@ -52,16 +51,15 @@ class Form extends React.Component {
 
   render() 
   {
-    console.log("tick");
     const isResponseRecived = this.state.isResponseRecived;
     let formResponse = "";
     if (isResponseRecived) 
     {      
-      formResponse = <FormResponse />;    
-    } 
+      formResponse = <FormResponse formResponse={this.state.formData}/>;    
+    }
     return (
       <div>
-        <FormTemplate formTitle="Форма обратной связи" onSubmit={this.handleSubmit}/>        
+        <FormTemplate formTitle={this.props.formTitle} onSubmit={this.handleSubmit} />        
         {formResponse}      
       </div>
     );

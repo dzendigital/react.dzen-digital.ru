@@ -21,26 +21,24 @@ class FormTemplate extends React.Component {
     };
     this.handleName = this.handleName.bind(this);
     this.handleSubject = this.handleSubject.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleSubmit(e) 
   {
-    console.log(e);
     e.preventDefault();
-    /**
-     * выполнение fetch запроса 
-     */
+    this.props.onSubmit(this.state);
   }
-  handleName(event) {    
+  handleName(e) {    
     this.setState(
       {
-        name: event.target.value
+        name: e.target.value
       }
     );  
   }
-  handleSubject(event) {    
+  handleSubject(e) {    
     this.setState(
       {
-        subject: event.target.value
+        subject: e.target.value
       }
     );  
   }

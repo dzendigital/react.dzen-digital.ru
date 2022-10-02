@@ -27,8 +27,8 @@ npm start
 
 	<link rel="stylesheet" href="node_modules/uikit/dist/css/uikit.min.css">
 
-	<link rel="icon" href="/logo-favicon.svg?v=1.1664608195" type="image/svg+xml">
-	<link rel="icon" href="/logo-favicon.png?v=1.1664608195" type="image/png">
+	<link rel="icon" href="logo-favicon.svg?v=1.1664608195" type="image/svg+xml">
+	<link rel="icon" href="logo-favicon.png?v=1.1664608195" type="image/png">
 
 </head>
 <body>
@@ -43,10 +43,18 @@ npm start
 					<div id="FormResponse"></div>
 				</section>
 			</div>
+			<div data-element="row">
+				<section data-component="form">
+					<div id="Form1"></div>
+				</section>
+				<section data-component="form-response">
+					<div id="FormResponse1"></div>
+				</section>
+			</div>
 		</main>
 		<footer></footer>
 	</div>
 	<!-- react scrips -->
-	<script src="/dist/app.js?v=<?=time() ?>"></script>
+	<script src="dist/app.js?v=<?=time() ?>"></script>
 </body>
 </html>
