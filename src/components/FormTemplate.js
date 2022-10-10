@@ -3,16 +3,18 @@
  * импорт для использовании в скрипте 
  * 
  */
-import React from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import UIkit from 'uikit';
 import Icons from 'uikit/dist/js/uikit-icons';
-import styles from './FormTemplate.css';
+import './FormTemplate.css';
+import { TestContext } from './Form';
 /**
  *
  * определение компонента 
  * 
  */
 class FormTemplate extends React.Component {
+  // static contextType = TestContext;
   constructor(props) {
     super(props);
     this.state = {
@@ -22,7 +24,34 @@ class FormTemplate extends React.Component {
     this.handleName = this.handleName.bind(this);
     this.handleSubject = this.handleSubject.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    
   }
+  
+  componentDidMount () {
+    console.log('componentDidMount');
+  }
+  componentDidUpdate () {
+    console.log('componentDidUpdate');
+  }
+  componentWillUnmount () {
+    console.log('componentWillUnmount');
+  }
+  // UNSAFE_componentWillReceiveProps () 
+  // {
+  //   if (this.state.name.length > 3) {
+  //     this.setState(
+  //       {
+  //         messeage: this.state.name
+  //       }
+  //     );
+  //   }else {
+  //     this.setState(
+  //       {
+  //         messeage: 'Недопустимое количество '
+  //       }
+  //     );
+  //   }
+  // }
   handleSubmit(e) 
   {
     e.preventDefault();
@@ -42,12 +71,11 @@ class FormTemplate extends React.Component {
       }
     );  
   }
-
   render() {
+    // console.log(contextType);
     return (
         <form onSubmit={this.handleSubmit}>
             <fieldset className="uk-fieldset">
-
                 <legend className="uk-legend">{this.props.formTitle}</legend>
 
                 <div className="uk-margin">
@@ -63,6 +91,10 @@ class FormTemplate extends React.Component {
                       <option>Новый заказ</option>
                       <option>Услуга доработки</option>
                     </select>
+                </div>
+                <div>
+                    {/* {this.context} */}
+                    {this.state.messeage}
                 </div>
                 <input type="submit" value="Отправить" />
             </fieldset>

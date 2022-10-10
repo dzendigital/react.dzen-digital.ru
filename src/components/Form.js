@@ -6,16 +6,18 @@
 import React from 'react';
 import UIkit from 'uikit';
 import Icons from 'uikit/dist/js/uikit-icons';
-import styles from './Form.css';
+import './Form.css';
 
 import FormTemplate from './FormTemplate.js';
 import FormResponse from './FormResponse.js';
+import Example from './Example';
 
 /**
  *
  * определение компонента 
  * 
  */
+export const TestContext = React.createContext('Пример карточки в корзине');
 class Form extends React.Component {
   constructor(props) 
   {
@@ -51,16 +53,20 @@ class Form extends React.Component {
 
   render() 
   {
+    
     const isResponseRecived = this.state.isResponseRecived;
     let formResponse = "";
     if (isResponseRecived) 
     {      
-      formResponse = <FormResponse formResponse={this.state.formData}/>;    
+      formResponse = <FormResponse formResponse={this.state.formData}/>;
     }
     return (
       <div>
-        <FormTemplate formTitle={this.props.formTitle} onSubmit={this.handleSubmit} />        
-        {formResponse}      
+        <TestContext.Provider value='MobilePhone'>
+          <FormTemplate formTitle={this.props.formTitle} onSubmit={this.handleSubmit} />   
+          <Example /> 
+        </TestContext.Provider>    
+        {formResponse}
       </div>
     );
   }

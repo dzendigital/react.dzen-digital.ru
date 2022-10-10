@@ -25,7 +25,7 @@ npm start
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>React app for form</title>
 
-	<link rel="stylesheet" href="node_modules/uikit/dist/css/uikit.min.css">
+	<!-- <link rel="stylesheet" href="node_modules/uikit/dist/css/uikit.min.css"> -->
 
 	<link rel="icon" href="logo-favicon.svg?v=1.1664608195" type="image/svg+xml">
 	<link rel="icon" href="logo-favicon.png?v=1.1664608195" type="image/png">
@@ -33,7 +33,14 @@ npm start
 </head>
 <body>
 	<div id="app">
-		<header></header>
+		<header>
+			<section data-component="burger">
+				<div id="Burger"></div>
+			</section>
+			<section data-component="burger">
+				<div id="Burger1"></div>
+			</section>
+		</header>
 		<main>
 			<div data-element="row">
 				<section data-component="form">

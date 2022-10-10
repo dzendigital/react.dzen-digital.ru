@@ -6,7 +6,7 @@
 import React from 'react';
 import UIkit from 'uikit';
 import Icons from 'uikit/dist/js/uikit-icons';
-import styles from './FormResponse.css';
+import './FormResponse.css';
 /**
  *
  * определение компонента 

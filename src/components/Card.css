@@ -1,0 +1,8 @@
+.card {
+    display: grid;
+    grid-template-columns: 250px auto;
+}
+#Burger {
+    margin-top: 50px;
+    margin-left: 50px;
+}
