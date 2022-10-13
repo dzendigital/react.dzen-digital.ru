@@ -1,0 +1,14 @@
+[data-component="serverMessages"]{
+	background: #4a4a4a;
+	width: 300px;
+	padding: 10px 10px;
+	border-radius: 3px;
+	color: #fff;	
+}
+[data-component="userData"]{
+	background: #39ac2f;
+	width: 300px;
+	padding: 10px 10px;
+	border-radius: 3px;
+	color: #fff;
+}
